@@ -1,0 +1,42 @@
+---
+
+---
+
+<section class="flex justify-center items-center h-[calc(100vh-112px)] overflow-hidden">
+    
+    <div class="flex justify-between items-center w-full max-w-5xl">
+        <!-- LEFT -->
+        <div class="space-y-8">
+            <h1 class="text-8xl font-extrabold">
+                ZAZ <br>
+                968M
+            </h1>
+        
+            <h3 class="text-accent text-2xl font-extrabold">ZAPOROZHETIC</h3>
+        
+            <p class="font-extrabold text-xl leading-6">
+                LEGENDARY <br>
+                SOVIET <br>
+                CAR
+            </p>
+        </div>
+        <!-- RIGHT -->
+        <div class="relative h-full w-1/2 p-20">
+            <img class="image-anim | h-full w-full object-contain rotate-[20deg] opacity-100" src="public/bulp.svg">
+            <!-- SQUARE -->
+            <div class="absolute left-0 top-full bg-accent w-full h-20"></div>
+        </div>
+    </div>
+</section>
+
+
+
+<script>
+    let tl = gsap.timeline({repeat: -1});
+
+    tl.from(".image-anim", {
+        duration: 5, 
+        scale: 0, 
+        ease: "bounce"
+    });
+</script>
