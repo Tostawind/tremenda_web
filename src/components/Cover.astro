@@ -2,12 +2,12 @@
 
 ---
 
-<section class="flex justify-center items-center h-[calc(100vh-112px)] overflow-hidden">
+<section class="flex justify-center h-[calc(100vh-112px)] overflow-hidden">
     
     <div class="flex justify-between items-center w-full max-w-5xl">
         <!-- LEFT -->
         <div class="space-y-8">
-            <h1 class="text-8xl font-extrabold">
+            <h1 class="xl:text-9xl text-8xl font-extrabold">
                 ZAZ <br>
                 968M
             </h1>
@@ -21,11 +21,11 @@
             </p>
         </div>
         <!-- RIGHT -->
-        <div class="relative h-full w-1/2 p-20">
-            <div class="h-full w-full relative">
+        <div class="relative h-full w-2/3 p-40">
+            <div class="h-full w-full relative grid place-items-center border-green-500">
                 <!-- BULB -->
                 <div class="bulb | relative">
-                    <img class="h-full w-full object-contain opacity-100" src="public/bulp.svg" />
+                    <img class="h-full w-full object-contain opacity-100" src="/bulp.svg" />
                     <div class="light | absolute bottom-full left-0 translate-y-8 -rotate-45 h-14 w-7 bg-accent" style="clip-path: polygon(29% 0, 66% 0, 57% 100%, 40% 100%)"></div>
                     <div class="light | absolute bottom-full left-1/2 -translate-x-1/2 -translate-y-4 h-24 w-12 bg-accent" style="clip-path: polygon(29% 0, 66% 0, 57% 100%, 40% 100%)"></div>
                     <div class="light | absolute bottom-full right-0 translate-y-8 rotate-45 h-14 w-7 bg-accent" style="clip-path: polygon(29% 0, 66% 0, 57% 100%, 40% 100%)"></div>
@@ -37,7 +37,7 @@
                 </div>
             </div>
             <!-- SQUARE -->
-            <div class="absolute left-0 top-full bg-accent w-full h-20"></div>
+            <div class="absolute left-0 bottom-0 bg-accent w-full h-20"></div>
         </div>
     </div>
 </section>
@@ -55,40 +55,60 @@
         rotation: 405,
         duration: 2,
         ease: 'bounce.out',
-    }, 0)
+    });
 
     tl.to('.light', {
+        delay: 0.5,
         opacity: 1,
         duration: 1,
         ease: 'bounce.inOut',
-        stagger: 0.1
-    }, 1)
+        stagger: 0.1,
+    });
 
     tl.to('.bulb', {
+        delay: 0.5,
         scale: 0,
         rotation: -405,
-    }, 2)
+    });
 
     tl.to('.scissors', {
         scale: 1,
         rotation: -405,
         duration: 2,
         ease: 'bounce.out',
-    }, 3)
+    })
 
     tl.to('.scissors-top', {
+        delay: 0.5,
         rotation: -24
-    }, 4)
+    })
 
     tl.to('.scissors-bottom', {
         rotation: 24
-    }, 4)
+    }, "<")
 
     tl.to('.scissors-top', {
-        rotation: -0
-    }, 5)
+        rotation: -0,
+    })
 
     tl.to('.scissors-bottom', {
         rotation: 0
-    }, 5)
+    }, "<")
+
+    tl.to('.scissors-top', {
+        rotation: -24
+    })
+
+    tl.to('.scissors-bottom', {
+        rotation: 24
+    }, "<")
+
+    tl.to('.scissors-top', {
+        rotation: -0,
+    })
+
+    tl.to('.scissors-bottom', {
+        rotation: 0
+    }, "<")
+
 </script>
