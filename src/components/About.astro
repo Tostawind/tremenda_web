@@ -1,0 +1,43 @@
+---
+import Card from "./Card.astro";
+
+const cardsInfo = [
+    {
+        title: "Estrategia",
+        description: `
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia qui earum, debitis <span class="bold">maxime</span> 
+            ab itaque laborum quos! Sint nulla, rerum sequi 👋 unde quod itaque magni voluptatum, accusamus culpa, placeat ducimus.
+        `,
+        image: "https://images.pexels.com/photos/5691866/pexels-photo-5691866.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+        title: "Incrementar ventas",
+        description: `
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia qu, debitis <span class="bold">maxime</span> 
+                ab itaque laborum quos! 🚀
+        `,
+        image: "https://images.pexels.com/photos/3697811/pexels-photo-3697811.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+        title: "Estrategia",
+        description: `
+            LLorem ipsum dolor sit amet 🔥🔥🔥 consectetur adipisicing elit. Mollitia qu, debitis <span class="bold">maxime</span> 
+            ab itaque laborum quos! Lorem ipsum dolor.
+        `,
+        image: "https://images.pexels.com/photos/2421374/pexels-photo-2421374.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+]
+---
+<section class="flex flex-col relative w-full max-w-5xl mx-auto py-52">
+    <!-------------------------------------------------->
+    <!-- TITLE -->
+    <h1 class="headline-2 text-shadow | text-white">¿Por qué nosotros?</h1>
+
+    <!-------------------------------------------------->
+    <!-- CONTET -->
+    <div class="space-y-12 py-10">
+        {
+            cardsInfo.map(card => <Card title={card.title}, description={card.description} image={card.image}/>)
+        }
+    </div>
+</section>
