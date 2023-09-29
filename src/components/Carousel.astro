@@ -1,4 +1,4 @@
-<div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
+<div id="image-track" data-mouse-down-at="0" data-prev-percentage="0" class="hover:cursor-grab active:cursor-grabbing">
     <img class="image" src="https://images.unsplash.com/photo-1695653422287-81cfeeb96ade?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" draggable="false">
     <img class="image" src="https://images.unsplash.com/photo-1682686581580-d99b0230064e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" draggable="false">
     <img class="image" src="https://images.unsplash.com/photo-1695575161610-7aeb03933996?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" draggable="false">
@@ -32,35 +32,35 @@
     const track = document.getElementById("image-track");
 
     window.onmousedown = e => {
-    track.dataset.mouseDownAt = e.clientX;
+        track.dataset.mouseDownAt = e.clientX;
     }
 
     window.onmouseup = () => {
-    track.dataset.mouseDownAt = "0";
-    track.dataset.prevPercentage = track.dataset.percentage;
+        track.dataset.mouseDownAt = "0";
+        track.dataset.prevPercentage = track.dataset.percentage;
     }
 
     window.onmousemove = e => {
-    if(track.dataset.mouseDownAt === "0") return;
-    
-    const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX;
-    const maxDelta = window.innerWidth / 2;
-    
-    const percentage = (mouseDelta / maxDelta) * -100;
-    
-    const nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage;
-    const nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), - 100);
-    
-    track.dataset.percentage = nextPercentage;
-    
-    track.animate({
-        transform: `translate(${nextPercentage}%, -50%)`
-    }, { duration: 1200, fill: "forwards" })
-    
-    for(const image of track.getElementsByClassName("image")) {
-        image.animate({
-        objectPosition: `${100 + nextPercentage}% center`
-        }, { duration: 1200, fill: "forwards" });
-    }
+        if(track.dataset.mouseDownAt === "0") return;
+        
+        const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX;
+        const maxDelta = window.innerWidth / 2;
+        
+        const percentage = (mouseDelta / maxDelta) * -100;
+        
+        const nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage;
+        const nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), - 100);
+        
+        track.dataset.percentage = nextPercentage;
+        
+        track.animate({
+            transform: `translate(${nextPercentage}%, -50%)`
+        }, { duration: 1200, fill: "forwards" })
+        
+        for(const image of track.getElementsByClassName("image")) {
+            image.animate({
+            objectPosition: `${100 + nextPercentage}% center`
+            }, { duration: 1200, fill: "forwards" });
+        }
     }
 </script>

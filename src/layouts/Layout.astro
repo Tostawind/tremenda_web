@@ -21,7 +21,11 @@ const { title } = Astro.props;
 		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 	</head>
 	<body>
-		<main class="min-h-screen bg-primary font-montserrat">
+		
+		<main id="main" class="relative min-h-screen bg-primary font-montserrat">
+			<!-- CURSOR -->
+			<div id="cursor" class="absolute top-1/2 left-1/2 z-0 -translate-x-1/2 -translate-y-1/2 bg-white h-12 w-12 rounded-full opacity-90"></div>
+
 			<Header/>
 			<slot />
 		</main>
@@ -29,6 +33,10 @@ const { title } = Astro.props;
 </html>
 <style is:global>
 	:root {}
+	
+	html {
+		scroll-behavior: smooth;
+	}
 	/*================================================================*/
 	/* == SCROLLBAR == */
 	::-webkit-scrollbar {
@@ -74,6 +82,15 @@ const { title } = Astro.props;
 <script is:inline src="/lib/gsap.min.js"></script>
 
 <script>
+	const cursor = document.querySelector('#cursor');
+
+	document.getElementById('main')?.addEventListener('mousemove', (e) => {
+		const { pageX, pageY } = e;
+		cursor?.animate({
+			left: `${pageX}px`,
+			top: `${pageY}px`
+		}, {duration: 3000, fill: "forwards"})
+	})
 
 </script>
 
