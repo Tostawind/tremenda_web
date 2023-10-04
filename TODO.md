@@ -1,0 +1,16 @@
+# To Do
+---
+- [ ] HEADER
+  - [ ] Responsive
+- [ ] COVER
+  - [ ] Arreglar SVG tijeras y añadir más svgs
+  - [ ] Responsive
+- [ ] ABOUT
+  - [ ] Responsive
+  - [ ] Texto
+- [ ] CLIENTES
+  - [ ] Carousel entenderlo y ajustarlo
+  - [ ] Poner un titulo y tags de tecnologias
+  - [ ] Enlace a cliente
+- [ ] CONTACTO
+- [ ] FOOTER

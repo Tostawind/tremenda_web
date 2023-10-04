@@ -9,7 +9,7 @@ const { title, description, image } = Astro.props;
 ---
 
 <div class="flex gap-10 h-60 bg-white rounded-lg overflow-hidden shadow-md">
-    <div class="flex-1 p-10 h-full">
+    <div class="flex-1 p-10 h-full border border-red-500">
         <h2 class="headline-5">{title}</h2>
         <p class="text" set:html={description}></p>
     </div>
