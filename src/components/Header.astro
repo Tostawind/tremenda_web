@@ -2,7 +2,7 @@
 const menu = [
     {
         text: 'Home',
-        link: '/'
+        link: '/#'
     },
     {
         text: 'Nosotros',
@@ -25,7 +25,7 @@ const menu = [
     <!------------------------------------------------------------------------->
     <!-- CENTER (menu) -->
     <nav class="md:grid hidden place-content-center flex-1">
-        <ul class="flex gap-10 font-bold w-min border border-yellow-500">
+        <ul class="flex gap-10 font-bold w-min">
             {
                 menu.map((item) => (
                     <li class="hover:text-accent-darker transition-all duration-200 ease-linear">
@@ -70,15 +70,15 @@ const menu = [
     </div>
 
     <!-- MENU -->
-    <div id="menu-responsive" class="flex absolute top-0 left-0 h-screen w-screen backdrop-blur-xl">
-        <div class="close-button | absolute top-6 right-8 text-3xl font-bold">X</div>
+    <div class="menu-responsive | hidden absolute top-0 left-0 h-screen w-screen bg-secondary/95">
+        <div class="close-button | absolute top-6 right-8 text-3xl text-white font-bold">X</div>
 
         <nav class="h-full w-full">
-            <ul class="flex flex-col justify-center items-center text-3xl font-bold h-full w-full">
+            <ul class="flex flex-col justify-center items-center text-5xl font-bold h-full w-full">
                 {
                     menu.map((item) => (
-                        <li class="grid place-content-center hover:text-accent-darker transition-all duration-200 ease-linear border flex-1 w-full">
-                            <a href={item.link}>{item.text}</a>
+                        <li class="menu-link | hover:text-accent-darker transition-all duration-200 ease-linear border bg-secondary text-white py-10 px-10 w-full text-right">
+                            <a class="block text-right" href={item.link}>{item.text}</a>
                         </li>
                     ))
                 }
@@ -92,7 +92,10 @@ const menu = [
 <script>
     const burger = document.querySelector('.burger');
     const closeButton = document.querySelector('.close-button');
-    const menu = document.getElementById('menu-responsive');
+    const menu = document.querySelector<HTMLElement>('.menu-responsive');
+    
+    const links = document.querySelectorAll<HTMLElement>('.menu-link')
+
     let isOpen = false;
 
     burger?.addEventListener('click', () => {
@@ -107,6 +110,14 @@ const menu = [
         closeMenu();
     })
 
+    links.forEach(link => {
+        link.addEventListener('click', (e) => {
+            // linkAnimation(e.target);
+            closeMenu();
+        })
+    })
+
+
     const openMenu = () => {
         menu!.style.display = "flex";
         isOpen = true;
@@ -115,6 +126,17 @@ const menu = [
     const closeMenu = () => {
         menu!.style.display = "none";
         isOpen = false;
-
     }
+
+    // const linkAnimation = (link:any) => {
+    //     let tl = gsap.timeline();
+
+    //     tl.to(link, {
+    //         background:' #F50187',
+    //         duration: 2,
+    //      });
+
+    // }
+
+
 </script>
