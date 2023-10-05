@@ -15,15 +15,17 @@ const menu = [
 ]
 ---
 
-<header class="sticky flex justify-between items-center w-full h-28 px-20">
-    <!-- LOGO -->
+<header class="sticky z-50 flex justify-between items-center w-full h-28 lg:px-20 px-10">
+    <!------------------------------------------------------------------------->
+    <!-- LEFT (logo) -->
     <div class="w-1/6 text-3xl font-extrabold">
         ZAR
     </div>
 
-    <!-- MENU -->
-    <nav class="flex-1">
-        <ul class="flex gap-10 font-bold w-min mx-auto">
+    <!------------------------------------------------------------------------->
+    <!-- CENTER (menu) -->
+    <nav class="md:grid hidden place-content-center flex-1">
+        <ul class="flex gap-10 font-bold w-min border border-yellow-500">
             {
                 menu.map((item) => (
                     <li class="hover:text-accent-darker transition-all duration-200 ease-linear">
@@ -35,8 +37,9 @@ const menu = [
         </ul>
     </nav>
 
-    <!-- RIGHT -->
-    <div class="w-1/6 flex justify-end">
+    <!------------------------------------------------------------------------->
+    <!-- RIGHT (button) -->
+    <div class="md:flex hidden justify-end w-1/6">
         <!-- hover:rotate-[360deg] -->
         <button class="flex justify-center items-center gap-2 border-2 border-secondary px-5 py-2.5 bg-secondary text-white rounded-lg hover:scale-105 hover:rotate-12 hover:shadow-lg hover:bg-primary hover:text-secondary active:scale-100 active:shadow-none transition-all duration-200 ease-linear">
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hand-rock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -49,4 +52,69 @@ const menu = [
             Contacto
         </div>
     </div>
+
+
+    <!------------------------------------------------------------------------->
+    <!-- RESPONSIVE (menu) -->
+    <!-- BUTTON -->
+    <div class="md:hidden flex justify-end w-1/6">
+        <!-- hover:rotate-[360deg] -->
+        <button class="burger | flex justify-center items-center gap-2 border-2 border-secondary px-3 py-2.5 bg-secondary text-white rounded-lg hover:scale-105 hover:rotate-12 hover:shadow-lg hover:bg-primary hover:text-secondary active:scale-100 active:shadow-none transition-all duration-200 ease-linear">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-deep" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M4 6h16"></path>
+                <path d="M7 12h13"></path>
+                <path d="M10 18h10"></path>
+             </svg>
+        </div>
+    </div>
+
+    <!-- MENU -->
+    <div id="menu-responsive" class="flex absolute top-0 left-0 h-screen w-screen backdrop-blur-xl">
+        <div class="close-button | absolute top-6 right-8 text-3xl font-bold">X</div>
+
+        <nav class="h-full w-full">
+            <ul class="flex flex-col justify-center items-center text-3xl font-bold h-full w-full">
+                {
+                    menu.map((item) => (
+                        <li class="grid place-content-center hover:text-accent-darker transition-all duration-200 ease-linear border flex-1 w-full">
+                            <a href={item.link}>{item.text}</a>
+                        </li>
+                    ))
+                }
+                
+            </ul>
+        </na>
+    </div>
+    
 </header>
+
+<script>
+    const burger = document.querySelector('.burger');
+    const closeButton = document.querySelector('.close-button');
+    const menu = document.getElementById('menu-responsive');
+    let isOpen = false;
+
+    burger?.addEventListener('click', () => {
+        if(isOpen) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    })
+
+    closeButton?.addEventListener('click', () => {
+        closeMenu();
+    })
+
+    const openMenu = () => {
+        menu!.style.display = "flex";
+        isOpen = true;
+    }
+
+    const closeMenu = () => {
+        menu!.style.display = "none";
+        isOpen = false;
+
+    }
+</script>
