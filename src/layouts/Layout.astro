@@ -22,7 +22,7 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		
-		<main id="main" class="relative min-h-screen bg-primary font-montserrat">
+		<main id="main" class="relative flex flex-col items-center min-h-screen bg-primary font-montserrat overflow-hidden">
 			<!-- CURSOR -->
 			<div id="cursor" class="absolute top-1/2 left-1/2 z-0 -translate-x-1/2 -translate-y-1/2 bg-white h-12 w-12 rounded-full opacity-90"></div>
 
@@ -60,7 +60,7 @@ const { title } = Astro.props;
 	/*================================================================*/
 	/* == TEXT == */
 	.headline-2 {
-		@apply text-6xl font-extrabold mb-10;
+		@apply md:text-6xl text-5xl font-extrabold md:mb-10 mb-4 md:text-left text-center;
 	}
 	.headline-5 {
 		@apply text-2xl font-extrabold mb-2;
@@ -71,7 +71,7 @@ const { title } = Astro.props;
 	}
 
 	.text {
-		@apply text-lg;
+		@apply md:text-lg text-base;
 	}
 
 	.bold {

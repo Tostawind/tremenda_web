@@ -2,11 +2,12 @@
 ---
 - [ ] HEADER
   - [ ] Responsive
+  - [ ] Sticky?
 - [ ] COVER
   - [ ] Arreglar SVG tijeras y añadir más svgs
   - [ ] Responsive
 - [ ] ABOUT
-  - [ ] Responsive
+  - [x] Responsive
   - [ ] Texto
 - [ ] CLIENTES
   - [ ] Carousel entenderlo y ajustarlo
@@ -14,19 +15,3 @@
   - [ ] Enlace a cliente
 - [ ] CONTACTO
 - [ ] FOOTER
-
-## ⚠ Importants ⚠
-- [ ] Clients: Control slide
-- [ ] Clients: Height and Center
-- [ ] Clients: Title and click
-- [ ] About: /web/ Cards row ???
-- [ ] Contact
-- [ ] Footer
-- [ ] Header sticky ???
-
----
-## ⌛ Futuro ⌛
-- [ ] Animation: add more svg
-- [ ] Animation: Fix scissors
-- [ ] 
-

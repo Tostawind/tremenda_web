@@ -28,16 +28,16 @@ const cardsInfo = [
     },
 ]
 ---
-<section class="flex flex-col relative w-full max-w-5xl px-4 py-52">
+<section class="flex flex-col relative w-full max-w-5xl md:px-10 px-8 py-52">
     <!-------------------------------------------------->
     <!-- TITLE -->
-    <h1 class="headline-2 text-shadow | text-white">¿Por qué nosotros?</h1>
+    <h2 class="headline-2 text-shadow | text-white">¿ Por qué nosotros ?</h2>
 
     <!-------------------------------------------------->
     <!-- CONTET -->
-    <div class="space-y-12 py-10">
+    <div class="flex flex-col gap-10 py-10">
         {
-            cardsInfo.map(card => <Card title={card.title}, description={card.description} image={card.image}/>)
+            cardsInfo.map(card => <Card title={card.title} description={card.description} image={card.image}/>)
         }
     </div>
 </section>
