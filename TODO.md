@@ -1,8 +1,9 @@
 # To Do
 ---
 - [ ] HEADER
-  - [ ] Responsive
-  - [ ] Sticky?
+  - [x] Responsive
+  - [x] ~~Sticky?~~ Creo q no
+  - [ ] Cuando el menu responsive está abierto BLOQUEAR SCROLL
 - [ ] COVER
   - [ ] Arreglar SVG tijeras y añadir más svgs
   - [ ] Responsive
