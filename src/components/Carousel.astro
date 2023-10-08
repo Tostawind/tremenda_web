@@ -2,16 +2,17 @@
     <img class="image" src="https://images.unsplash.com/photo-1695653422287-81cfeeb96ade?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" draggable="false">
     <img class="image" src="https://images.unsplash.com/photo-1682686581580-d99b0230064e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" draggable="false">
     <img class="image" src="https://images.unsplash.com/photo-1695575161610-7aeb03933996?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" draggable="false">
-    <!-- <img class="image" src="https://images.unsplash.com/photo-1682688759350-050208b1211c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" draggable="false">
+    <img class="image" src="https://images.unsplash.com/photo-1682688759350-050208b1211c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" draggable="false">
     <img class="image" src="https://images.unsplash.com/photo-1695805868055-636315fcd124?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80" draggable="false">
     <img class="image" src="https://images.unsplash.com/photo-1695751240056-c9aea1e799df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2128&q=80" draggable="false">
     <img class="image" src="https://images.unsplash.com/photo-1682686581220-689c34afb6ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" draggable="false">
-    <img class="image" src="https://images.unsplash.com/photo-1682687221213-56e250b36fdd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" draggable="false"> -->
+    <img class="image" src="https://images.unsplash.com/photo-1682687221213-56e250b36fdd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" draggable="false">
 </div>
 
 <style>
     #image-track {
         display: flex;
+        width: max-content; /* añadido por mi */
         gap: 4vmin;
         position: absolute;
         left: 50%;
@@ -31,16 +32,19 @@
 <script>
     const track = document.getElementById("image-track");
 
-    window.onmousedown = e => {
+    track.onmousedown = e => {
         track.dataset.mouseDownAt = e.clientX;
+        console.log('down')
     }
 
-    window.onmouseup = () => {
+    track.onmouseup = () => {
         track.dataset.mouseDownAt = "0";
         track.dataset.prevPercentage = track.dataset.percentage;
+        console.log('up')
     }
 
-    window.onmousemove = e => {
+    track.onmousemove = e => {
+        console.log('move')
         if(track.dataset.mouseDownAt === "0") return;
         
         const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX;

@@ -121,11 +121,15 @@ const menu = [
     const openMenu = () => {
         menu!.style.display = "flex";
         isOpen = true;
+        // No scroll
+        document.body.classList.add('no-scroll');
     }
 
     const closeMenu = () => {
         menu!.style.display = "none";
         isOpen = false;
+        // Enable scroll
+        document.body.classList.remove('no-scroll');
     }
 
     // const linkAnimation = (link:any) => {

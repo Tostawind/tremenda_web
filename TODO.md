@@ -3,7 +3,7 @@
 - [ ] HEADER
   - [x] Responsive
   - [x] ~~Sticky?~~ Creo q no
-  - [ ] Cuando el menu responsive está abierto BLOQUEAR SCROLL
+  - [x] Cuando el menu responsive está abierto BLOQUEAR SCROLL
 - [ ] COVER
   - [ ] Arreglar SVG tijeras y añadir más svgs
   - [ ] Responsive
