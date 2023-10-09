@@ -1,5 +1,15 @@
 <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0" class="hover:cursor-grab active:cursor-grabbing">
-    <img class="image" src="https://images.unsplash.com/photo-1695653422287-81cfeeb96ade?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" draggable="false">
+    <div class="image-container | cursor-pointer">
+        <img class="image" src="https://images.unsplash.com/photo-1695653422287-81cfeeb96ade?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" draggable="false">
+        <div class="image-text">
+            <h2 class="text-3xl font-bold">Gimnasio fuerte</h2>
+            <!-- TAGS -->
+            <div class="flex gap-4 flex-wrap py-4">
+                <div class="py-1 px-4 rounded-full bg-accent/80 text-sm font-bold">Sport</div>
+                <div class="py-1 px-4 rounded-full bg-orange-400/80 text-sm font-bold">Emprendimiento</div>
+            </div> 
+        </div>
+    </div>
     <img class="image" src="https://images.unsplash.com/photo-1682686581580-d99b0230064e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" draggable="false">
     <img class="image" src="https://images.unsplash.com/photo-1695575161610-7aeb03933996?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" draggable="false">
     <img class="image" src="https://images.unsplash.com/photo-1682688759350-050208b1211c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" draggable="false">
@@ -20,32 +30,60 @@
         transform: translate(0%, -50%); 
         user-select: none; /* -- Prevent image highlighting -- */
     }
+    
+    #image-track .image-container  {
+        position: relative;
+        overflow: hidden;
+    }
 
-    #image-track > .image {
+    .image-container .image {
         width: 40vmin;
         height: 56vmin;
         object-fit: cover;
         object-position: 100% center;
     }
+    #image-track .image {
+        width: 40vmin;
+        height: 56vmin;
+        object-fit: cover;
+        object-position: 100% center;
+    }
+
+    .image-container .image-text {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0,0,0,0.7);
+        color: white;
+        display: grid;
+        place-content: center;
+        padding: 1em;
+        transition: all 800ms ease;
+    }
+
+    .image-container:hover .image-text {
+        top: 0;
+    }
 </style>
 
 <script>
     const track = document.getElementById("image-track");
-
-    track.onmousedown = e => {
+    // TODO: Ejecutar cuando es mobil y cuando desktop
+    /*========================================================================*/
+    // DESKTOP
+    window.onmousedown = e => {
         track.dataset.mouseDownAt = e.clientX;
-        console.log('down')
     }
 
-    track.onmouseup = () => {
-        track.dataset.mouseDownAt = "0";
-        track.dataset.prevPercentage = track.dataset.percentage;
-        console.log('up')
+    window.onmouseup = () => {
+        track!.dataset.mouseDownAt = "0";
+        track!.dataset.prevPercentage = track!.dataset.percentage;
     }
 
-    track.onmousemove = e => {
-        console.log('move')
-        if(track.dataset.mouseDownAt === "0") return;
+    window.onmousemove = e => {
+        if(track!.dataset.mouseDownAt === "0") return;
         
         const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX;
         const maxDelta = window.innerWidth / 2;
@@ -55,13 +93,48 @@
         const nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage;
         const nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), - 100);
         
-        track.dataset.percentage = nextPercentage;
+        track!.dataset.percentage = nextPercentage.toString();
         
-        track.animate({
+        track!.animate({
             transform: `translate(${nextPercentage}%, -50%)`
         }, { duration: 1200, fill: "forwards" })
         
-        for(const image of track.getElementsByClassName("image")) {
+        for(const image of track!.getElementsByClassName("image")) {
+            image.animate({
+            objectPosition: `${100 + nextPercentage}% center`
+            }, { duration: 1200, fill: "forwards" });
+        }
+    }
+    /*========================================================================*/
+    // MOBIL
+    window.ontouchstart = e => {
+        track!.dataset.mouseDownAt = e.targetTouches[0].clientX.toString();
+    }
+
+    window.ontouchend = () => {
+        track!.dataset.mouseDownAt = "0";
+        track!.dataset.prevPercentage = track!.dataset.percentage;
+    }
+
+    window.ontouchmove = e => {
+        console.log('phone move')
+        if(track!.dataset.mouseDownAt === "0") return;
+        
+        const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.targetTouches[0].clientX;
+        const maxDelta = window.innerWidth / 2;
+        
+        const percentage = (mouseDelta / maxDelta) * -100;
+        
+        const nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage;
+        const nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), - 100);
+        
+        track!.dataset.percentage = nextPercentage.toString();
+        
+        track!.animate({
+            transform: `translate(${nextPercentage}%, -50%)`
+        }, { duration: 1200, fill: "forwards" })
+        
+        for(const image of track!.getElementsByClassName("image")) {
             image.animate({
             objectPosition: `${100 + nextPercentage}% center`
             }, { duration: 1200, fill: "forwards" });
