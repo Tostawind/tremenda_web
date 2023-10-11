@@ -19,7 +19,7 @@ const cardsInfo = [
         image: "https://images.pexels.com/photos/3697811/pexels-photo-3697811.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
-        title: "Estrategia",
+        title: "Giro 180º",
         description: `
             LLorem ipsum dolor sit amet 🔥🔥🔥 consectetur adipisicing elit. Mollitia qu, debitis <span class="bold">maxime</span> 
             ab itaque laborum quos! Lorem ipsum dolor.
@@ -28,16 +28,32 @@ const cardsInfo = [
     },
 ]
 ---
-<section id="about" class="flex flex-col relative w-full max-w-5xl md:px-10 px-8 py-52">
+<section id="about" class="flex flex-col relative w-full max-w-5xl md:px-10 px-8 md:py-52 py-32">
     <!-------------------------------------------------->
     <!-- TITLE -->
     <h2 class="headline-2 text-shadow | text-white">¿ Por qué nosotros ?</h2>
 
     <!-------------------------------------------------->
     <!-- CONTET -->
-    <div class="flex flex-col gap-10 py-10">
+    <div class="flex flex-col gap-10 relative z-10 py-10">
         {
             cardsInfo.map(card => <Card title={card.title} description={card.description} image={card.image}/>)
         }
     </div>
 </section>
+
+<style>
+    #about::before {
+        content: '';
+        @apply absolute md:bottom-16 bottom-0 left-1/2 bg-accent h-10 w-screen;
+        transform: translate(-50%, 0) skewY(-6deg);
+        opacity: 80%;
+    }
+    #about::after {
+        content: '';
+        @apply absolute md:bottom-36 bottom-20 left-1/2 bg-accent h-10 w-screen;
+        position: absolute;
+        transform: translate(-50%, 0) skewY(-6deg);
+        opacity: 80%;
+    }
+</style>

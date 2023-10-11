@@ -1,22 +1,108 @@
+---
+const clientList = [
+    {
+        image: 'https://images.unsplash.com/photo-1695653422287-81cfeeb96ade?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80',
+        alt: 'Gym',
+        title: 'Gimnasio',
+        tags: [
+            {
+                text: 'Sport',
+                color: 'bg-accent'
+            },
+            {
+                text: 'Emprendimiento',
+                color: 'bg-orange-400'
+            },
+        ]
+    },
+    {
+        image: 'https://images.unsplash.com/photo-1682686581580-d99b0230064e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        alt: 'Gym',
+        title: 'Obrador',
+        tags: [
+            {
+                text: 'Comida',
+                color: 'bg-green-400',
+            },
+            {
+                text: 'Emprendimiento',
+                color: 'bg-orange-400'
+            },
+        ]
+    },
+    {
+        image: 'https://images.unsplash.com/photo-1695575161610-7aeb03933996?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80',
+        alt: 'Gym',
+        title: 'Restaurante',
+        tags: [
+            {
+                text: 'Comida',
+                color: 'bg-green-400'
+            },
+            {
+                text: 'Emprendimiento',
+                color: 'bg-orange-400'
+            },
+        ]
+    },
+    {
+        image: 'https://images.unsplash.com/photo-1682688759350-050208b1211c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        alt: 'Gym',
+        title: 'Gimnasio fuerte',
+        tags: [
+            {
+                text: 'Sport',
+                color: 'bg-accent'
+            },
+            {
+                text: 'Emprendimiento',
+                color: 'bg-orange-400'
+            },
+        ]
+    },
+    {
+        image: 'https://images.unsplash.com/photo-1695805868055-636315fcd124?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80',
+        alt: 'Gym',
+        title: 'Gimnasio fuerte',
+        tags: [
+            {
+                text: 'Sport',
+                color: 'bg-accent'
+            },
+            {
+                text: 'Emprendimiento',
+                color: 'bg-orange-400'
+            },
+        ]
+    },
+];
+---
+
 <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0" class="hover:cursor-grab active:cursor-grabbing">
-    <div class="image-container | cursor-pointer">
-        <img class="image" src="https://images.unsplash.com/photo-1695653422287-81cfeeb96ade?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" draggable="false">
-        <div class="image-text">
-            <h2 class="text-3xl font-bold">Gimnasio fuerte</h2>
-            <!-- TAGS -->
-            <div class="flex gap-4 flex-wrap py-4">
-                <div class="py-1 px-4 rounded-full bg-accent/80 text-sm font-bold">Sport</div>
-                <div class="py-1 px-4 rounded-full bg-orange-400/80 text-sm font-bold">Emprendimiento</div>
-            </div> 
-        </div>
-    </div>
-    <img class="image" src="https://images.unsplash.com/photo-1682686581580-d99b0230064e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" draggable="false">
-    <img class="image" src="https://images.unsplash.com/photo-1695575161610-7aeb03933996?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" draggable="false">
-    <img class="image" src="https://images.unsplash.com/photo-1682688759350-050208b1211c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" draggable="false">
-    <img class="image" src="https://images.unsplash.com/photo-1695805868055-636315fcd124?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80" draggable="false">
-    <img class="image" src="https://images.unsplash.com/photo-1695751240056-c9aea1e799df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2128&q=80" draggable="false">
-    <img class="image" src="https://images.unsplash.com/photo-1682686581220-689c34afb6ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" draggable="false">
-    <img class="image" src="https://images.unsplash.com/photo-1682687221213-56e250b36fdd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" draggable="false">
+    {
+        clientList.map((client) => (
+            <div class="image-container | cursor-pointer">
+                <img class="image" src={client.image} alt={client.alt} draggable="false" />
+                <div class="image-text">
+                    <h2 class="text-3xl font-bold flex justify-between items-center">
+                        {client.title} 
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-caret-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M6 10l6 6l6 -6h-12"></path>
+                        </svg>
+                    </h2>
+                    <!-- TAGS -->
+                    <div class="flex gap-4 flex-wrap py-4">
+                        {
+                            client.tags.map((tag) => (
+                                <div class:list={tag.color} class="py-1 px-4 rounded-full text-sm font-bold">{tag.text}</div>
+                            ))
+                        }
+                    </div>
+                </div>
+            </div>
+        ))
+    }
 </div>
 
 <style>
@@ -51,20 +137,25 @@
 
     .image-container .image-text {
         position: absolute;
-        top: 100%;
+        top: 80%;
         left: 0;
         height: 100%;
         width: 100%;
         background-color: rgba(0,0,0,0.7);
         color: white;
         display: grid;
-        place-content: center;
+        place-content: start center;
         padding: 1em;
         transition: all 800ms ease;
     }
 
-    .image-container:hover .image-text {
+    .image-container .image-text:hover {
         top: 0;
+        place-content: center;
+    }
+
+    .image-container .image-text:hover svg {
+        display: none;
     }
 </style>
 

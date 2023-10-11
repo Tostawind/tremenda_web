@@ -11,8 +11,8 @@
   - [x] Responsive
   - [ ] Texto
 - [ ] CLIENTES
-  - [ ] Carousel entenderlo y ajustarlo
-  - [ ] Poner un titulo y tags de tecnologias
+  - [x] Carousel entenderlo y ajustarlo
+  - [x] Poner un titulo y tags de tecnologias
   - [ ] Enlace a cliente
 - [ ] CONTACTO
 - [ ] FOOTER
