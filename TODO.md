@@ -2,6 +2,7 @@
 ---
 - [ ] GENERAL
   - [ ] Cambiar nombre a proyecto (brutal --> tremenda)
+  - [ ] Hacer BUTTON Componente
 - [ ] HEADER
   - [ ] Animación cuandor se abre el menu burger
 - [ ] COVER
@@ -10,7 +11,8 @@
 - [ ] ABOUT
   - [ ] Texto
 - [ ] CLIENTES
-  - [ ] Responsive Carousel (letras, tag)
+  - [x] Responsive Carousel (letras, tag)
+  - [ ] El fondo del carousel queda vacio, añadir manchas o algo
   - [ ] Enlace a cliente
 - [ ] CONTACTO
 - [ ] FOOTER
