@@ -63,7 +63,7 @@ const clientList = [
     {
         image: 'https://images.unsplash.com/photo-1695805868055-636315fcd124?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80',
         alt: 'Gym',
-        title: 'Gimnasio fuerte',
+        title: 'Titulo largo largo largo largo muy largo.',
         tags: [
             {
                 text: 'Sport',
@@ -84,9 +84,9 @@ const clientList = [
             <div class="image-container | cursor-pointer">
                 <img class="image" src={client.image} alt={client.alt} draggable="false" />
                 <div class="image-text">
-                    <h2 class="text-3xl font-bold flex justify-between items-center">
+                    <h2 class="text-3xl font-bold flex justify-between items-center truncate" title={client.title}>
                         {client.title} 
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-caret-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                             <path d="M6 10l6 6l6 -6h-12"></path>
                         </svg>

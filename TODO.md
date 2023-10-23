@@ -1,18 +1,16 @@
 # To Do
 ---
+- [ ] GENERAL
+  - [ ] Cambiar nombre a proyecto (brutal --> tremenda)
 - [ ] HEADER
-  - [x] Responsive
-  - [x] ~~Sticky?~~ Creo q no
-  - [x] Cuando el menu responsive está abierto BLOQUEAR SCROLL
+  - [ ] Animación cuandor se abre el menu burger
 - [ ] COVER
   - [ ] Arreglar SVG tijeras y añadir más svgs
   - [ ] Responsive
 - [ ] ABOUT
-  - [x] Responsive
   - [ ] Texto
 - [ ] CLIENTES
-  - [x] Carousel entenderlo y ajustarlo
-  - [x] Poner un titulo y tags de tecnologias
+  - [ ] Responsive Carousel (letras, tag)
   - [ ] Enlace a cliente
 - [ ] CONTACTO
 - [ ] FOOTER
