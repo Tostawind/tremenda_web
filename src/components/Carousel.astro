@@ -81,7 +81,7 @@ const clientList = [
 <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0" class="hover:cursor-grab active:cursor-grabbing">
     {
         clientList.map((client) => (
-            <div class="image-container | cursor-pointer">
+            <div class="image-container | w-72 cursor-pointer">
                 <img class="image" src={client.image} alt={client.alt} draggable="false" />
                 <div class="image-text">
                     <h2 class="text-3xl font-bold flex justify-between items-center truncate" title={client.title}>
@@ -115,29 +115,26 @@ const clientList = [
         top: 50%;
         transform: translate(0%, -50%); 
         user-select: none; /* -- Prevent image highlighting -- */
+        height: 100%;
     }
     
     #image-track .image-container  {
         position: relative;
         overflow: hidden;
+        height: 100%;
     }
 
     .image-container .image {
-        width: 40vmin;
-        height: 56vmin;
-        object-fit: cover;
-        object-position: 100% center;
-    }
-    #image-track .image {
-        width: 40vmin;
-        height: 56vmin;
+        /* height: 56vmin; */
+        /* width: 40vmin; */
+        height: 100%;
         object-fit: cover;
         object-position: 100% center;
     }
 
     .image-container .image-text {
         position: absolute;
-        top: 80%;
+        top: 84%;
         left: 0;
         height: 100%;
         width: 100%;
