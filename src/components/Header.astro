@@ -70,15 +70,15 @@ const menu = [
     </div>
 
     <!-- MENU -->
-    <div class="menu-responsive | hidden absolute top-0 left-0 h-screen w-screen bg-secondary/95">
+    <div class="menu-responsive | flex absolute top-0 left-full h-screen w-screen bg-secondary/95 transition-all ease-linear duration-300">
         <div class="close-button | absolute top-6 right-8 text-3xl text-white font-bold">X</div>
 
         <nav class="h-full w-full">
             <ul class="flex flex-col justify-center items-center text-5xl font-bold h-full w-full">
                 {
                     menu.map((item) => (
-                        <li class="menu-link | hover:text-accent-darker transition-all duration-200 ease-linear border bg-secondary text-white py-10 px-10 w-full text-right">
-                            <a class="block text-right" href={item.link}>{item.text}</a>
+                        <li class="hover:text-accent-darker transition-all duration-200 ease-linear border bg-secondary text-white py-10 px-10 w-full text-right">
+                            <a class="menu-link | block text-right" href={item.link}>{item.text}</a>
                         </li>
                     ))
                 }
@@ -112,35 +112,26 @@ const menu = [
 
     links.forEach(link => {
         link.addEventListener('click', (e) => {
-            // linkAnimation(e.target);
             closeMenu();
+            e.preventDefault();
+            setTimeout(() => {
+                window.location.href = (e.target as HTMLAnchorElement).href;
+            }, 500);
         })
     })
 
 
     const openMenu = () => {
-        menu!.style.display = "flex";
+        menu!.style.left = "0%";
         isOpen = true;
         // No scroll
         document.body.classList.add('no-scroll');
     }
 
     const closeMenu = () => {
-        menu!.style.display = "none";
+        menu!.style.left = "100%";
         isOpen = false;
         // Enable scroll
         document.body.classList.remove('no-scroll');
     }
-
-    // const linkAnimation = (link:any) => {
-    //     let tl = gsap.timeline();
-
-    //     tl.to(link, {
-    //         background:' #F50187',
-    //         duration: 2,
-    //      });
-
-    // }
-
-
 </script>
