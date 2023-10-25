@@ -15,4 +15,6 @@
   - [ ] El fondo del carousel queda vacio, añadir manchas o algo
   - [ ] Enlace a cliente
 - [ ] CONTACTO
-- [ ] FOOTER
+  - [ ] Control de formulario
+  - [ ] Enviar formulario a correo
+- [x] FOOTER

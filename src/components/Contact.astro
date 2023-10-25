@@ -1,14 +1,14 @@
-<section id="about" class="w-full md:px-10 px-8 py-32 bg-accent">
+<section id="about" class="w-full md:px-10 px-8 md:py-32 py-16 bg-accent">
     <!-------------------------------------------------->
     <!-- WRAPPER -->
     <div  class="w-full max-w-5xl mx-auto">
         <!-------------------------------------------------->
         <!-- TITLE -->
-        <h2 class="headline-2 | text-white">Contacto</h2>
+        <h2 class="headline-2 | text-white mb-10">Contacto</h2>
 
         <!-------------------------------------------------->
         <!-- CONTET -->
-        <form action="" class="flex flex-col gap-10 relative z-20 bg-white p-10 rounded-lg">
+        <form action="" class="flex flex-col md:gap-10 gap-4 relative z-20 bg-white md:px-10 px-5 md:py-10 pt-10 pb-5 rounded-lg">
             <div class="flex flex-col">
                 <label for="nombre" class="opacity-70 font-bold mb-2 ">Tu nombre:</label>
                 <input id="nombre" type="text" class="text | border focus:outline-accent px-4 py-2">
@@ -21,7 +21,7 @@
 
             <div class="flex flex-col">
                 <label for="email" class="opacity-70 font-bold mb-2">El mensaje:</label>
-                <textarea id="mensaje" cols="30" rows="10" class="text | border focus:outline-accent px-4 py-2"></textarea>
+                <textarea id="mensaje" cols="30" rows="10" class="text | border focus:outline-accent px-4 py-2 h-32 resize-none"></textarea>
             </div>
 
 
@@ -40,5 +40,21 @@
 </section>
 
 <style>
+    #about {
+        --dot-bg: #F50187;
+        --dot-color: rgb(255 255 255 / 10%);
+        --dot-size: 5px;
+        --dot-space: 80px;
+        background:
+            linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+            linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+            var(--dot-color);
+    }
 
+    @media (max-width: 768px) {
+        #about {
+            --dot-size: 2px;
+            --dot-space: 30px;
+        }
+     }
 </style>
