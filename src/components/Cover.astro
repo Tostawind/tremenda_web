@@ -33,11 +33,19 @@
                     <div class="light | absolute bottom-full right-0 translate-y-8 rotate-45 h-14 w-7 bg-accent" style="clip-path: polygon(29% 0, 66% 0, 57% 100%, 40% 100%)"></div>
                 </div>
 
+                <!-- SCISSORS -->
                 <div class="scissors | absolute h-full w-full top-0">
                     <img class="scissors-top | relative -translate-y-8 z-10 h-full w-full object-contain" src="/scissors-top.svg" />
                     <img class="scissors-bottom | absolute top-0 translate-y-4 h-full w-full object-contain" src="/scissors-bottom.svg" />
                 </div>
+
+                <!-- CURSOR -->
+                <div class="cursor | absolute h-full w-full top-0">
+                    <img class="relative z-10 h-full w-full object-contain opacity-100" src="/cursor.svg" />
+                    <div class="cursor-click | absolute top-0 right-8 z-0 bg-accent h-32 w-32 rounded-full"></div>
+                </div>
             </div>
+            
             <!-- SQUARE -->
             <div class="absolute left-0 bottom-0 bg-accent w-full md:h-20 h-14"></div>
             <div class="absolute left-0 z-10 md:top-[calc(100%+20px)] top-[calc(100%+12px)] w-full md:space-y-5 space-y-3">
@@ -56,6 +64,8 @@
     tl.set('.bulb', {scale: 0});
     tl.set('.light', {opacity: 0});
     tl.set('.scissors', {scale: 0});
+    tl.set('.cursor', {scale: 0});
+    tl.set('.cursor-click', {scale: 0, opacity: 0});
 
     tl.to('.bulb', {
         scale: 1,
@@ -117,5 +127,35 @@
     tl.to('.scissors-bottom', {
         rotation: 0
     }, "<")
+
+    tl.to('.scissors', {
+        delay: 0.5,
+        scale: 0,
+        rotation: 405
+    });
+
+    tl.to('.cursor', {
+        scale: 1,
+        rotation: -360,
+        duration: 2,
+        ease: 'bounce.out',
+    })
+
+    tl.to('.cursor', { x: 100, ease: 'bounce.out' })
+    tl.to('.cursor', { y: -100, ease: 'bounce.out' })
+    
+    tl.to('.cursor', { scale: 0.8, duration: 0.1 })
+    tl.to('.cursor', { scale: 1, duration: 0.1  })
+    tl.to('.cursor', { scale: 0.8, duration: 0.1  })
+    tl.to('.cursor-click', { scale: 1, opacity:0.4, duration: 0.3 })
+    tl.to('.cursor', { scale: 1, duration: 0.1  }, "<")
+    tl.to('.cursor-click', { scale: 0, opacity: 0, duration: 0.1 })
+
+    tl.to('.cursor', { x: 0, y:0 })
+    
+    tl.to('.cursor', {
+        scale: 0,
+        rotation: 360
+    });
 
 </script>

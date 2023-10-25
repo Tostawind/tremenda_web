@@ -11,14 +11,14 @@
   - [ ] Responsive
 --------------------------------------------------------------------------------
 - [ ] ABOUT
-  - [ ] Texto
+  - [ ] Revisar texto
 --------------------------------------------------------------------------------
 - [ ] CLIENTES
   - [ ] El fondo del carousel queda vacio, añadir manchas o algo
   - [ ] Enlace a cliente
 --------------------------------------------------------------------------------
 - [ ] CONTACTO
-  - [ ] Control de formulario
+  - [x] Control de formulario
   - [ ] Enviar formulario a correo
 --------------------------------------------------------------------------------
 - [x] FOOTER
