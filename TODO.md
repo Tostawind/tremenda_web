@@ -4,8 +4,7 @@
   - [ ] Cambiar nombre a proyecto (brutal --> tremenda)
   - [ ] Hacer BUTTON Componente
 --------------------------------------------------------------------------------
-- [ ] HEADER
-  - [ ] Animación cuandor se abre el menu burger
+- [x] HEADER
 --------------------------------------------------------------------------------
 - [ ] COVER
   - [ ] Arreglar SVG tijeras y añadir más svgs
@@ -15,7 +14,6 @@
   - [ ] Texto
 --------------------------------------------------------------------------------
 - [ ] CLIENTES
-  - [x] Responsive Carousel (letras, tag)
   - [ ] El fondo del carousel queda vacio, añadir manchas o algo
   - [ ] Enlace a cliente
 --------------------------------------------------------------------------------
