@@ -2,7 +2,7 @@
 ---
 - [ ] GENERAL
   - [ ] Cambiar nombre a proyecto (brutal --> tremenda)
-  - [ ] Hacer BUTTON Componente
+  - [ ] ~~Hacer BUTTON Componente~~
 --------------------------------------------------------------------------------
 - [x] HEADER
 --------------------------------------------------------------------------------
@@ -16,6 +16,7 @@
 - [ ] CLIENTES
   - [ ] El fondo del carousel queda vacio, añadir manchas o algo
   - [ ] Enlace a cliente
+  - [ ] Fix: al clicar en según donde se buggea el carousel
 --------------------------------------------------------------------------------
 - [ ] CONTACTO
   - [x] Control de formulario
