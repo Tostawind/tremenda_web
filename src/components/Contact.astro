@@ -8,15 +8,15 @@
 
         <!-------------------------------------------------->
         <!-- CONTET -->
-        <form action="mailto:" class="flex flex-col md:gap-10 gap-4 relative z-20 bg-white md:px-10 px-5 md:py-10 pt-10 pb-5 rounded-lg">
+        <!-- <form id="formulario-email" class="flex flex-col md:gap-10 gap-4 relative z-20 bg-white md:px-10 px-5 md:py-10 pt-10 pb-5 rounded-lg">
             <div class="flex flex-col">
                 <label for="nombre" class="opacity-70 font-bold mb-2 ">Tu nombre:</label>
                 <input id="nombre" type="text" class="text | border focus:outline-accent px-4 py-2" required>
             </div>
 
             <div class="flex flex-col">
-                <label for="email" class="opacity-70 font-bold mb-2">Tu correo:</label>
-                <input id="email" type="email" class="text | border focus:outline-accent px-4 py-2" required>
+                <label for="titulo" class="opacity-70 font-bold mb-2">Titulo del mensaje:</label>
+                <input id="titulo" type="text" class="text | border focus:outline-accent px-4 py-2" required>
             </div>
 
             <div class="flex flex-col">
@@ -25,7 +25,7 @@
             </div>
 
 
-            <button class="flex justify-center items-center gap-2 border-2 border-secondary px-5 py-2.5 bg-secondary text-white rounded-lg hover:scale-105 hover:shadow-lg hover:bg-transparent hover:text-secondary active:scale-100 active:shadow-none transition-all duration-200 ease-linear cursor-pointer">
+            <button type="submit" class="flex justify-center items-center gap-2 border-2 border-secondary px-5 py-2.5 bg-secondary text-white rounded-lg hover:scale-105 hover:shadow-lg hover:bg-transparent hover:text-secondary active:scale-100 active:shadow-none transition-all duration-200 ease-linear cursor-pointer">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-send" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                     <path d="M10 14l11 -11"></path>
@@ -33,7 +33,18 @@
                 </svg>
                 Enviar
             </button>
-        </form>
+        </form> -->
+
+        <!-- OPCION 2 -->
+        <div class="flex md:flex-row flex-col items-center md:gap-10 gap-4 relative z-20 bg-white md:px-10 px-5 md:py-14 py-10 rounded-lg">
+            <div class="text">
+                Envianos un correo con tus preguntas: <br>
+            </div>
+            <div class="font-bold md:text-4xl text-2xl text-secondary md:py-4 py-2 px-2 md:px-4 border-2 border-dashed md:flex-1 text-center border-accent">
+                info@tremenda.web
+            </div>
+        </div>
+
 
     </div>
 
@@ -58,3 +69,25 @@
         }
      }
 </style>
+
+<script>
+    // const formulario = document.getElementById('formulario-email');
+    // let nombre = '';
+    // let titulo = '';
+    // let mensaje = '';
+    // formulario?.addEventListener('submit', (e) => {
+    //     e?.preventDefault();
+
+    //     nombre = e.target.nombre.value;
+    //     titulo = e.target.titulo.value;
+    //     mensaje = e.target.mensaje.value;
+
+    //     formulario.setAttribute('action', `mailto:adq21791@gmail.com?subject=${titulo}&body=${mensaje}`);
+
+    //     formulario.submit();
+
+    // })
+    
+
+
+</script>
