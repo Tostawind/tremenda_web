@@ -1,4 +1,4 @@
-<section id="contact" class="w-full md:px-10 px-8 md:py-32 py-16 bg-accent">
+<section id="contact" class="w-full md:px-10 px-8 md:py-32 py-12 bg-accent">
     <!-------------------------------------------------->
     <!-- WRAPPER -->
     <div  class="w-full max-w-5xl mx-auto">
@@ -40,8 +40,10 @@
             <div class="text">
                 Envianos un correo con tus preguntas: <br>
             </div>
-            <div class="font-bold md:text-4xl text-2xl text-secondary md:py-4 py-2 px-2 md:px-4 border-2 border-dashed md:flex-1 text-center border-accent">
-                info@tremenda.web
+            <div id="text-email" class="relative font-bold md:text-4xl text-2xl text-secondary md:py-4 py-2 px-2 md:px-4 border-2 border-dashed md:flex-1 text-center border-accent">
+                <span class="underline-soft | cursor-pointer">info@tremenda.web</span>
+
+                <div id="email-tooltip" class="absolute top-[110%] left-1/2 -translate-x-1/2 bg-secondary/70 text-white px-4 py-2 text-sm whitespace-nowrap opacity-0">Email copiado ✔</div>
             </div>
         </div>
 
@@ -71,6 +73,53 @@
 </style>
 
 <script>
+    const textEmail = document.getElementById('text-email');
+    let isClickEnabled = true;
+
+    let tl = gsap.timeline();
+
+
+    textEmail?.addEventListener('click', () => {
+        // Prevent second click in 1s
+        if(isClickEnabled) {
+            isClickEnabled = false
+
+            // Save in clipboard
+            navigator.clipboard.writeText('info@tremenda.web')
+                .then(() => {
+                    console.log('Texto copiado al portapapeles')
+                })
+                .catch(err => {
+                    console.error('Error al copiar al portapapeles:', err)
+                })
+    
+            // Tooltip animation
+            tl.fromTo('#email-tooltip', {
+                y: 50,
+                opacity: 0,
+                ease: 'bounce.out',
+            },{
+                y: 0,
+                opacity: 1,
+                ease: 'bounce.out',
+            });
+
+            tl.to('#email-tooltip', {
+                delay: 2,
+                y: 50,
+                opacity: 0,
+            });
+            
+            // Enable click in 1s
+            setTimeout(() => {
+                isClickEnabled = true;
+            }, 3000);
+        }
+    })
+
+
+
+
     // const formulario = document.getElementById('formulario-email');
     // let nombre = '';
     // let titulo = '';

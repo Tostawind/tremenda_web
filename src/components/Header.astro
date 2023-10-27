@@ -15,7 +15,7 @@ const menu = [
 ]
 ---
 
-<header class="sticky z-50 flex justify-between items-center w-full h-28 lg:px-20 px-10">
+<header class="sticky z-50 flex justify-between items-center w-full h-28 lg:px-20 px-8">
     <!------------------------------------------------------------------------->
     <!-- LEFT (logo) -->
     <div class="w-1/6 text-3xl font-extrabold">
@@ -59,7 +59,7 @@ const menu = [
     <!-- BUTTON -->
     <div class="md:hidden flex justify-end w-1/6">
         <!-- hover:rotate-[360deg] -->
-        <button class="burger | flex justify-center items-center gap-2 border-2 border-secondary px-3 py-2.5 bg-secondary text-white rounded-lg hover:scale-105 hover:rotate-12 hover:shadow-lg hover:bg-primary hover:text-secondary active:scale-100 active:shadow-none transition-all duration-200 ease-linear cursor-pointer">
+        <button class="burger | flex justify-center items-center gap-2 border-2 border-secondary px-2 py-1.5 bg-secondary text-white rounded-lg hover:scale-105 hover:rotate-12 hover:shadow-lg hover:bg-primary hover:text-secondary active:scale-100 active:shadow-none transition-all duration-200 ease-linear cursor-pointer">
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-deep" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                 <path d="M4 6h16"></path>
@@ -77,7 +77,7 @@ const menu = [
             <ul class="flex flex-col justify-center items-center text-5xl font-bold h-full w-full">
                 {
                     menu.map((item) => (
-                        <li class="hover:text-accent-darker transition-all duration-200 ease-linear border bg-secondary text-white py-10 px-10 w-full text-right">
+                        <li class="hover:text-accent-darker transition-all duration-200 ease-linear border-y bg-secondary text-white py-10 px-10 w-full text-right">
                             <a class="menu-link | block text-right" href={item.link}>{item.text}</a>
                         </li>
                     ))
