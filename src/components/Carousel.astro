@@ -162,17 +162,19 @@ const clientList = [
     /*========================================================================*/
     // DESKTOP
     window.onmousedown = e => {
-        track.dataset.mouseDownAt = e.clientX;
+        track.dataset.mouseDownAt = e.clientX.toString();
+        console.log('Mouse down');
     }
 
     window.onmouseup = () => {
         track!.dataset.mouseDownAt = "0";
         track!.dataset.prevPercentage = track!.dataset.percentage;
+        console.log('Mouse up');
     }
 
     window.onmousemove = e => {
         if(track!.dataset.mouseDownAt === "0") return;
-        
+        console.log('Mouse move');
         const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX;
         const maxDelta = window.innerWidth / 2;
         
@@ -197,15 +199,17 @@ const clientList = [
     // MOBIL
     window.ontouchstart = e => {
         track!.dataset.mouseDownAt = e.targetTouches[0].clientX.toString();
+        console.log('Mobil touch start');
     }
-
+    
     window.ontouchend = () => {
         track!.dataset.mouseDownAt = "0";
         track!.dataset.prevPercentage = track!.dataset.percentage;
+        console.log('Mobil touch end');
     }
 
     window.ontouchmove = e => {
-        console.log('phone move')
+        console.log('Mobil move')
         if(track!.dataset.mouseDownAt === "0") return;
         
         const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.targetTouches[0].clientX;

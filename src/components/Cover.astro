@@ -61,6 +61,8 @@
 
 
 <script>
+    import { gsap } from 'gsap';
+    
     let tl = gsap.timeline({repeat: -1});
     tl.set('.bulb', {scale: 0});
     tl.set('.light', {opacity: 0});
