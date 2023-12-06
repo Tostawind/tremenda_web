@@ -8,7 +8,7 @@ interface Props {
 const { title, description, image } = Astro.props;
 ---
 
-<div class="relative flex md:flex-row flex-col md:gap-10 gap-8 lg:h-60 md:h-72 h-auto bg-white rounded-lg overflow-hidden shadow-md">
+<div class="card | relative flex md:flex-row flex-col md:gap-10 gap-8 lg:h-60 md:h-72 h-auto bg-white rounded-lg overflow-hidden shadow-md">
     <div class="flex-1 md:p-10 px-6 pb-10 h-full md:order-1 order-2">
         <h2 class="headline-5">{title}</h2>
         <p class="text" set:html={description}></p>
@@ -17,3 +17,26 @@ const { title, description, image } = Astro.props;
         <img class="h-full w-full object-cover" src={image} alt="Chess">
     </div>
 </div>
+
+<script>
+    import { gsap } from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+    gsap.registerPlugin(ScrollTrigger);
+    
+    let tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: '.card',
+            start: '-200% 80%',
+            end: '100% 20%',
+            scrub: true,
+            markers: false,
+        }
+    });
+
+    tl.from('.card', {
+        y: 400,
+        duration: 1,
+        stagger: 1
+    });
+</script>

@@ -5,7 +5,7 @@ import Carousel from "./Carousel.astro";
 <section id="clients" class="flex flex-col relative w-full md:pt-10 md:pb-32 pb-20 py-14">
     <!-------------------------------------------------->
     <!-- TITLE -->
-    <h1 class="headline-2 | text-secondary w-full max-w-5xl mx-auto md:px-10 px-8">Clientes</h1>
+    <h1 id="title-clients" class="headline-2 | text-secondary w-full max-w-5xl mx-auto md:px-10 px-8">Clientes</h1>
 
     <!-------------------------------------------------->
     <!-- CARROUSEL -->
@@ -33,3 +33,25 @@ import Carousel from "./Carousel.astro";
         }
      } */
 </style>
+
+<script>
+    import { gsap } from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+    gsap.registerPlugin(ScrollTrigger);
+    
+    let tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: '#title-clients',
+            start: '-200% 80%',
+            end: '100% 20%',
+            scrub: true,
+            markers: false,
+        }
+    });
+
+    tl.from('#title-clients', {
+        x: -400,
+        duration: 2,
+    });
+</script>

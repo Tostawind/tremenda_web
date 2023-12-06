@@ -33,7 +33,7 @@ const cardsInfo = [
 <section id="about" class="flex flex-col relative w-full max-w-5xl md:px-10 px-8 md:py-52 py-32">
     <!-------------------------------------------------->
     <!-- TITLE -->
-    <h2 class="headline-2 text-shadow | text-white">¿Por qué nosotros?</h2>
+    <h2 id="title-about" class="headline-2 text-shadow | text-white">¿Por qué nosotros?</h2>
 
     <!-------------------------------------------------->
     <!-- CONTET -->
@@ -59,3 +59,25 @@ const cardsInfo = [
         opacity: 80%;
     }
 </style>
+
+<script>
+    import { gsap } from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+    gsap.registerPlugin(ScrollTrigger);
+    
+    let tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: '#title-about',
+            start: '-200% 80%',
+            end: '100% 20%',
+            scrub: true,
+            markers: false,
+        }
+    });
+
+    tl.from('#title-about', {
+        x: -400,
+        duration: 2,
+    });
+</script>
