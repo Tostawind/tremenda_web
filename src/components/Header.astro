@@ -18,8 +18,15 @@ const menu = [
 <header class="sticky z-50 flex justify-between items-center w-full md:h-28 h-20 lg:px-20 px-8">
     <!------------------------------------------------------------------------->
     <!-- LEFT (logo) -->
-    <div class="w-1/6 text-3xl font-extrabold">
+    <div class="flex items-center gap-1 md:w-1/6 text-3xl font-extrabold">
         TW
+        <svg class="md:hidden text-accent rotate-12 opacity-75" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M11 11.5v-1a1.5 1.5 0 0 1 3 0v1.5"></path>
+            <path d="M17 12v-6.5a1.5 1.5 0 0 1 3 0v10.5a6 6 0 0 1 -6 6h-2h.208a6 6 0 0 1 -5.012 -2.7a69.74 69.74 0 0 1 -.196 -.3c-.312 -.479 -1.407 -2.388 -3.286 -5.728a1.5 1.5 0 0 1 .536 -2.022a1.867 1.867 0 0 1 2.28 .28l1.47 1.47"></path>
+            <path d="M14 10.5a1.5 1.5 0 0 1 3 0v1.5"></path>
+            <path d="M8 13v-8.5a1.5 1.5 0 0 1 3 0v7.5"></path>
+         </svg>
     </div>
 
     <!------------------------------------------------------------------------->
@@ -82,6 +89,9 @@ const menu = [
                         </li>
                     ))
                 }
+                <li class="hover:text-accent-darker transition-all duration-200 ease-linear border-y bg-secondary text-white py-10 px-10 w-full text-right">
+                        <a class="menu-link | block text-right" href="/tremenda_web/#contact">Contacto</a>
+                </li>
                 
             </ul>
         </na>
